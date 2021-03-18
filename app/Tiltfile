@@ -1,0 +1,13 @@
+print('Step 1')
+
+k8s_yaml('app.yaml')
+
+print('Step 2')
+
+docker_build('application/pour-tilt', 'application')
+
+print('Step 3')
+
+k8s_resource('test-deployment', port_forwards='9000')
+
+print('Fin')
